@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { HangmanDrawing } from './components/HangmanDrawing'
+import HangmanWord from './components/HangmanWord'
+import { Keyboard } from './components/Keyboard'
 import words from './wordList.json'
 function App() {
 
@@ -9,8 +12,21 @@ function App() {
   
 
   return (
-    <div className="App">
-      Welcome to Hangman App - {wordToGuess}
+    <div style={{
+      maxWidth: "800px",
+      display: "flex",
+      flexDirection: "column",
+      gap: '2rem',
+      margin: "0 auto",
+      alignItems:"center"
+    }}>
+
+    <div style={{ textAlign: 'center', fontSize: "2rem"}}> Win / Lose</div>
+    
+    <HangmanDrawing />
+    <HangmanWord />
+    <Keyboard />
+    
     </div>
   )
 }
